@@ -11,16 +11,18 @@ export const getRateStream = () => {
   );
 
   const intID1 = setInterval(() => {
-    const tickerIdx = Math.floor(rand() * tickers.length);
-    const ticker = tickers[tickerIdx];
-    const addPennies = Math.round(rand() * 10 - 4.99) / 100;
+    for (let i = 0; i < 100; i++) {
+      const tickerIdx = Math.floor(rand() * tickers.length);
+      const ticker = tickers[tickerIdx];
+      const addPennies = Math.round(rand() * 10 - 4.99) / 100;
 
-    const current = values.get(ticker)! + addPennies;
+      const current = values.get(ticker)! + addPennies;
 
-    values.set(ticker, max(0, current));
+      values.set(ticker, max(0, current));
 
-    updateCount++;
-  }, 1);
+      updateCount++;
+    }
+  }, 10);
 
   const obs = new Observable((sub) => {
     console.log('attach');
