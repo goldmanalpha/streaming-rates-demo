@@ -1,39 +1,46 @@
+Streaming Rates Demo
+react app that displays high number of changes
 
 Features
 
+UI for fast presentation
 Streaming rates - sockets
-Testing - hi code coverae unit/jest, e2e - mock api server
+Testing - hi code coverage unit/jest, e2e - mock api server
 
 Nice to Have
 Responsive
 
-*** Sprint 0
+\*\*\* Sprint 0
 est - actual
 
-4 Express Rate Server
 1 CRA / Typescript
-2 get rates
 4 rx
 4 grid / display
+0/2 mock rates
 
-8 video  
+4 Express Rate Server
+2 get rates
+
+8 video
+
+- 4 setup video
 
 Sprint 1
 2 mobx
 4 redux
 
-8 video 
+8 video
 
 Sprint 2
 4 code coverage metrics / 80%+
 8 e2e
 
-8 video 
+8 video
 
 Sprint 3
 16 dockerize
 
-8 video 
+8 video
 
 Sprint 4
 responsive
