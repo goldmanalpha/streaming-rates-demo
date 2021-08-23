@@ -5,18 +5,22 @@ import Rates from './rates';
 
 function App() {
   const [rates, setRates] = useState({ rates: {}, updateCount: 0 });
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
-    const rateStream = getRateStream();
+    if (started) {
+      const rateStream = getRateStream();
 
-    const sub = rateStream.subscribe((value) => {
-      setRates(value);
-    });
-    return () => sub.unsubscribe();
-  }, []);
+      const sub = rateStream.subscribe((value) => {
+        setRates(value);
+      });
+      return () => sub.unsubscribe();
+    }
+  }, [started]);
 
   return (
     <div className="App">
+      {!started && <button onClick={() => setStarted(true)}>Go</button>}
       <header className="App-header">Streaming Rates Demo</header>
       <Rates rates={rates} />
     </div>

@@ -16,7 +16,8 @@ est - actual
 1-.5 CRA / Typescript
 4-1 rx
 0/2-.5 mock rates
-4 grid / display
+4-1 grid / display
+0-.5 styling
 
 4 Express Rate Server
 2 get rates
