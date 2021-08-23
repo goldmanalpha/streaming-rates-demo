@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
+import { getRateStream } from './api';
 import './App.css';
+import Rates from './rates';
 
 function App() {
+  const [rates, setRates] = useState({ updateCount: 0 });
+
+  useEffect(() => {
+    const rateStream = getRateStream();
+
+    const sub = rateStream.subscribe((value) => {
+      setRates(value);
+    });
+    return () => sub.unsubscribe();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header">Streaming Rates Demo</header>
+      <Rates rates={rates} />
     </div>
   );
 }
