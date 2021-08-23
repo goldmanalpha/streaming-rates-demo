@@ -1,1 +1,4 @@
-export type RateBundle = { [key: string]: number } & { updateCount: number };
+export type RateBundle = {
+  rates: { [key: string]: number };
+  updateCount: number;
+};

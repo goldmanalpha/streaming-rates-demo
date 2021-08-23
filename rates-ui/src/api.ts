@@ -26,11 +26,10 @@ export const getRateStream = () => {
     console.log('attach');
 
     const intID2 = setInterval(() => {
-      sub.next(
-        Object.assign(Object.fromEntries(values.entries()), {
-          updateCount,
-        }) as unknown as RateBundle
-      );
+      sub.next({
+        rates: Object.fromEntries(values.entries()),
+        updateCount,
+      });
     }, 200);
 
     return () => {

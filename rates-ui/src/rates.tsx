@@ -1,4 +1,5 @@
 import { RateBundle } from './types';
+import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 
 interface Props {
   rates: RateBundle;

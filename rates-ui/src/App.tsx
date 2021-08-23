@@ -4,7 +4,7 @@ import './App.css';
 import Rates from './rates';
 
 function App() {
-  const [rates, setRates] = useState({ updateCount: 0 });
+  const [rates, setRates] = useState({ rates: {}, updateCount: 0 });
 
   useEffect(() => {
     const rateStream = getRateStream();
