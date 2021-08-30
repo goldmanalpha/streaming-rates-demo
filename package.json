@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "ag-grid-community": "^26.0.0",
-    "ag-grid-react": "^26.0.0",
-    "rxjs": "^7.3.0"
-  }
-}
